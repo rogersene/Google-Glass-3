@@ -1,0 +1,140 @@
+<!DOCTYPE>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>Tudo sobre Google Glass</title>
+	<link rel="stylesheet" href="_css/estilo.css"/>
+	<link rel="stylesheet" href="_javascript/funcoes.js">
+	<link rel="stylesheet" href="_css/form.css">
+	<script type="text/javascript" src="_javascript/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="_javascript/jquery.maskMoney.min.js"></script>	
+	<script>
+	$(document.getElementById("#cQtd")).ready(function() {
+		$("#cTot").maskMoney({showSymbol: true, symbol: "R$", decimal:"," , thousands: "."});
+	});
+</script>
+
+</head>
+
+<script>
+	function calc_total() {
+		var qtd = parseInt(document.getElementById('cQtd').value)	
+		tot = qtd * 1.500	
+		resultado = document.getElementById('cTot').value = tot * 1000
+	}
+</script>
+
+<body>
+<div id="interface">
+
+	<header id="cabecalho">
+	<hgroup>
+		<img id="cabecalho" src="/_imagens_newproject/logo_google.png"> <br>
+		<h4 class="frase-cabecalho">Vídeo, música e um mundo de entretenimento <br> para você
+			Explore novas diversões</h4>
+		</hgroup>
+		
+		<img id="icone" src="/_imagens_newproject/chromecast-5-img-peq-.png">
+
+<nav id="Menu">
+	<h1>Menu Principal</h1>
+	<ul type="disc">
+	 <li onmouseover="MudaFoto('_imagens/home.png')" onmouseout="MudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+	 <li onmouseover="MudaFoto('_imagens/especificacoes.png')" onmouseout="MudaFoto('_imagens/contato.png')"><a href="specs.html">especificações</a></li>
+	 <li onmouseover="MudaFoto('_imagens/fotos.png')" onmouseout="MudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+	 <li onmouseover="MudaFoto('_imagens/multimidia.png')" onmouseout="MudaFoto('_imagens/contato.png')"><a href="Multimidia.html">Multimídia</a></li>
+	 <li onmouseover="MudaFoto('_imagens/contato.png')" onmouseout="MudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+	</ul>
+
+</nav>
+
+	</header>
+
+<section id="corpo-full">
+	<article id="noticia-principal">
+		<header id="cabecalho-artigo">
+			<hgroup>
+				<h3>Fale Conosco > Contato</h3>
+				<h1>Formulário de Contato</h1>
+				<h2>por Roger Crescêncio</h2>
+				<h3 class="direita">Atualizado em 23/Dezembro/2020</h3>
+			</hgroup>
+		</header>
+		
+		<form method="post" id="fContato" action="mailto:rogersenefari@gmail.com" oninput="calc_total()">
+
+			<fieldset id="usuario">
+				<legend> Identificação do Usuário</legend>
+				<p><label for="cNome"> Nome:</label>    <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" autocomplete="off"></p>
+				<p><label for="cSenha">Senha:</label>   <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 dígitos" autocomplete="off"></p>
+				<p><label for="cMail">Email</label>   <input type="email" name="tMail" id="cMail" size="20" maxlength="40" autocomplete="off"></p>
+				<fieldset id="sexo">
+				<legend>Sexo</legend>
+					<input type="radio" name="tSexo" id="tMasc" checked> <label for="tMasc">Masculino</label><br>
+					<input type="radio" name="tSexo" id="tFem"> <label for="tFem">Feminino</label>
+				</fieldset>
+				<p>Data de Nascimento: <input type="date" name="tNasc" id="cNasc"></p> 
+			</fieldset>
+
+			<fieldset id="endereco"><legend> Endereço do Usuário</legend>
+				<p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, AV, Travessa" autocomplete="off"></p>
+				<p><label>Número:</label> <input type="number" name="tNum" id="cNum" min="0" max="9999" autocomplete="off"></p>
+				<p><label for="cEst">Estado:</label>	
+				<select name="tEst" id="cEst">
+				<optgroup label="Região Sudeste">
+					<option value="RJ">Rio de Janeiro</option>
+					<option value="SP">São Paulo</option>
+					<option value="MG">Minas Gerais</option>
+				</optgroup>
+				<optgroup label="Região Sul">
+					<option value="PR">Paraná</option>
+					<option value="SC">Santa Catarina</option>
+					<option value="RS">Rio Grande do Sul</option>
+				</optgroup>
+				</select></p>
+				<p><label for="cCid">Cidade:</label>
+				<input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></p>
+				<datalist id="cidades">
+					<option value="Rio de Janeiro"></option>
+					<option value="Nova Iguaçu"></option>
+					<option value="Niterói"></option>
+					<option value="Belford Roxo"></option>
+
+				</datalist>
+			</fieldset>
+
+			<fieldset id="mensagem"><legend> Mensagem do Usuário</legend>
+				<p><label for="cUrg"> Grau de Urgência:</label>
+				Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10"/>Máx</p>
+				<p><label for="cMsg"> Mensagem:</label>
+				<textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+				</p>
+			</fieldset>
+
+			<fieldset id="pedido"><legend> Quero um Google Glass</legend>
+				<p><input type="checkbox" name="tPed" id="cPed" checked/>
+				<label for="cPed"> Gostaria de adquirir um Google Chromecast 3 quando disponível</label></p>
+				<p><label for="cCor">Cor:</label>
+				<input type="color" name="tCor" id="cCor" value="#0000FF"/></p>
+				<p><label for="cQtd">Quantidade:</label>
+				<input type="number" name="tQtd" id="cQtd" min="1" max="5" value="0"></p>
+				<p><label for="cTot">Preço Total: R$</label>
+				<input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly= "true"></p>
+			</fieldset>
+
+			<input type="submit" value= "Enviar" id="botao">
+			
+		</form>
+
+	</article>
+</section>	
+<footer id="rodape">
+	<p>Copyright &copy; 2020 - by Roger Crescêncio <br/> </p></p>
+	<p><a href="https://www.linkedin.com/in/roger-sene-crescencio-6a6925184/"><img src="/_imagens_newproject/logo-linkedin.jpg" alt="logo-linkedin" id="logo-linkedin" height="36px" width="65px"></a>
+	<a href="https://github.com/rogersene"><img src="/_imagens_newproject/logo-github.jpg" alt="logo-github" id="logo-github"></a> </p>
+</footer>
+
+</div>
+</body>
+</html>
