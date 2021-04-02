@@ -27,5 +27,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - JavaScript
 
 ## 💻 Projeto
-
-- Neste projeto apresentei um site completo apresentado o produto Google Glass 3 ,  nele pude aplicar tecnicas muito utilizadas de CSS,HTML, JavaScript e Jquery.
+- Site completo de 5 páginas contendo: galeria de fotos, galeria com video de unboxing do produto, formulário de pedidod do produto, especificações do produto
+- Neste projeto pude aplicar técnicas muito utilizadas de CSS,HTML, JavaScript e Jquery.
